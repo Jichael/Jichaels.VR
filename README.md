@@ -5,4 +5,4 @@ Custom SDK for VR/NoVR. Can be switched at runtime. Includes a player controller
 
 ### Dependencies
 
-  * Jichaels's Core : https://github.com/Jichael/JichaelsUPM.git#JichaelsCore
+  * Jichaels's Core : https://github.com/Jichael/Jichaels.Core
