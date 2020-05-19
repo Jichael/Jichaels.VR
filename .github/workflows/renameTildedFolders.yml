@@ -1,0 +1,32 @@
+name: Rename tilded folders
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  rename_samples:
+    name: Create branches
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+            git checkout master
+            git config --global user.name 'github-bot'
+            git config --global user.email 'github-bot@users.noreply.github.com'
+            if [[ -d "Samples" ]]; then
+              git mv Samples Samples~
+              rm -f Samples.meta
+              git commit -am "rename: Samples => Samples~"
+              git push origin master
+            else
+              echo "${i}Samples does not exist"
+            fi
+            if [[ -d "Documentation" ]]; then
+              git mv Documentation Documentation~
+              rm -f Documentation.meta
+              git commit -am "rename: Documentation => Documentation~"
+              git push origin master
+            else
+              echo "${i}Documentation does not exist"
+            fi
