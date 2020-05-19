@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6d7f62cacd266a443802a40e78b50fd2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mousePositionReference: {fileID: 3518843013661237934, guid: 6d3003f9cde850945b1d37700399178b,
+      type: 3}
+  - movementReference: {fileID: 8416240525526526895, guid: 6d3003f9cde850945b1d37700399178b,
+      type: 3}
+  - rotationReference: {fileID: -3744022788102502172, guid: 6d3003f9cde850945b1d37700399178b,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

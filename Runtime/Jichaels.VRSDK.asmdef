@@ -1,0 +1,19 @@
+{
+    "name": "Jichaels.VRSDK",
+    "references": [
+        "GUID:b80689c80dec70b45ab289e994177be8",
+        "GUID:1e188380f26b48f488bb7076cc84b095",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:e40ba710768534012815d3193fa296cb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

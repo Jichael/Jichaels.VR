@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: JVRHandRightController
+  m_Controller: {fileID: 9100000, guid: 69b4adc1486ecec409d0b8b0c2138890, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9e0c614895f985b4db6c73a24c66ff01, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: d190800f52334504caecc099affa78dd, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 3640ae07399548a448caf47f4a45a675, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 858515e09aa3e9a4799dc8fdf892efcd, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: d1ad2cd4856e5b347bbdd684264ea939, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: d2928ab382b32f0409cc9dc7eacaea0c, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 4f045e89ac742fa44a4f40d504fb287a, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 94ccf306e2eb7104f8e8250d295d7fab, type: 3}

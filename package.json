@@ -1,0 +1,26 @@
+{
+  "name": "com.jichaels.jvr",
+  "version": "0.1.1-preview",
+  "displayName": "Jichaels VR SDK",
+  "description": "Custom SDK for VR/NoVR. Can be switched at runtime. Includes a player controller, interactions and much more.",
+  "unity": "2019.3",
+  "author": {
+    "name": "Jichaels",
+    "email": "Jichael38@hotmail.fr"
+  },
+  "dependencies": {
+    "com.unity.inputsystem": "1.0.0-preview.6",
+    "com.unity.xr.management": "3.0.6",
+    "com.jichaels.core": "0.1.1",
+    "com.jichaels.localization": "0.1.1",
+    "com.unity.textmeshpro": "3.0.0-preview.13",
+    "com.unity.animation.rigging": "0.3.3-preview"
+  },
+  "samples": [
+    {
+      "displayName": "Player",
+      "description": "Player prefab ready to go. just drag it into your scene and customize parameters to suit your needs !",
+      "path": "Samples~/Player"
+    }
+  ]
+}
