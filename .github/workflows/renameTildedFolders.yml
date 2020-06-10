@@ -2,7 +2,7 @@ name: Rename tilded folders
 on:
   push:
     branches:
-    - master
+    - release
 
 jobs:
   rename_samples:

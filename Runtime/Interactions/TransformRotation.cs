@@ -13,6 +13,8 @@ public class TransformRotation : MonoBehaviour
     
     private Vector3 _startPosition;
     private Vector3 _endPosition;
+    private Quaternion _startRotation;
+    private Quaternion _endRotation;
 
     private bool _isRotating;
     private Coroutine _coroutine;
@@ -20,6 +22,7 @@ public class TransformRotation : MonoBehaviour
     public void Rotate(Vector3 eulers, bool forceNoSmooth = false)
     {
         _endPosition = eulers;
+        _endRotation = Quaternion.Euler(eulers);
 
         if (forceNoSmooth || !smoothRotation)
         {
@@ -33,7 +36,7 @@ public class TransformRotation : MonoBehaviour
 
     private void Rotate()
     {
-        toRotate.localEulerAngles = _endPosition;
+        toRotate.localRotation = _endRotation;
     }
 
     private void RotateSmooth()
@@ -45,13 +48,13 @@ public class TransformRotation : MonoBehaviour
 
     private IEnumerator RotateSmoothCo()
     {
-        _startPosition = toRotate.localEulerAngles;
+        _startRotation = toRotate.localRotation;
         float delta = 0;
 
         while (delta < 1)
         {
             delta += Time.deltaTime * rotationSpeed;
-            toRotate.localEulerAngles = Vector3.Lerp(_startPosition, _endPosition, delta);
+            toRotate.localRotation = Quaternion.Slerp(_startRotation, _endRotation, delta);
             yield return Yielders.EndOfFrame;
         }
 
