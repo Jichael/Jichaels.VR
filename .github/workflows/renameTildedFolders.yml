@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-            git checkout master
+            git checkout release
             git config --global user.name 'github-bot'
             git config --global user.email 'github-bot@users.noreply.github.com'
             if [[ -d "Samples" ]]; then
               git mv Samples Samples~
               rm -f Samples.meta
               git commit -am "rename: Samples => Samples~"
-              git push origin master
+              git push origin release
             else
               echo "${i}Samples does not exist"
             fi
@@ -26,7 +26,7 @@ jobs:
               git mv Documentation Documentation~
               rm -f Documentation.meta
               git commit -am "rename: Documentation => Documentation~"
-              git push origin master
+              git push origin release
             else
               echo "${i}Documentation does not exist"
             fi
