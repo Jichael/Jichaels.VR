@@ -11,8 +11,6 @@ public class TransformRotation : MonoBehaviour
     [SerializeField] private bool smoothRotation = true;
     [SerializeField, ShowIf("smoothRotation")] private float rotationSpeed = 1;
     
-    private Vector3 _startPosition;
-    private Vector3 _endPosition;
     private Quaternion _startRotation;
     private Quaternion _endRotation;
 
@@ -21,7 +19,6 @@ public class TransformRotation : MonoBehaviour
 
     public void Rotate(Vector3 eulers, bool forceNoSmooth = false)
     {
-        _endPosition = eulers;
         _endRotation = Quaternion.Euler(eulers);
 
         if (forceNoSmooth || !smoothRotation)
