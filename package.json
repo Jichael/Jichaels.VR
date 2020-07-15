@@ -1,6 +1,6 @@
 {
   "name": "com.jichaels.jvr",
-  "version": "0.1.1-preview",
+  "version": "0.1.3-preview",
   "displayName": "Jichaels VR SDK",
   "description": "Custom SDK for VR/NoVR. Can be switched at runtime. Includes a player controller, interactions and much more.",
   "unity": "2019.3",
