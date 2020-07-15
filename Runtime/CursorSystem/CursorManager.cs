@@ -11,6 +11,7 @@ namespace Jichaels.VRSDK
 
         [SerializeField] private GameObject cursorCanvas;       
 
+        [SerializeField] private CursorBase fixedCursor;
         [SerializeField] private CursorBase defaultCursor;
         [SerializeField] private CursorBase zoomCursor;
         [SerializeField] private CursorBase handCursor;
@@ -34,10 +35,12 @@ namespace Jichaels.VRSDK
             zoomCursor.HideCursor();
             handCursor.HideCursor();
             informationCursor.HideCursor();
+            fixedCursor.HideCursor();
         }
 
         public void SetCursorPosition(Vector3 position)
         {
+            if (IsLocked) return;
             _currentCursor.transform.position = position;
         }
 
@@ -80,6 +83,13 @@ namespace Jichaels.VRSDK
             
             IsLocked = isLocked;
             Cursor.lockState = IsLocked ? CursorLockMode.Locked : CursorLockMode.None; // TODO : in the option menu, chose between confined and none
+
+            if (IsLocked)
+            {
+                _currentCursor.HideCursor();
+                _currentCursor = fixedCursor;
+                _currentCursor.ShowCursor();
+            }
         }
 
         public void SetCanvasActive(bool active)

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
 public class RendererChangeMaterial : MonoBehaviour
 {
 
@@ -9,5 +10,4 @@ public class RendererChangeMaterial : MonoBehaviour
     {
         renderer.material = material;
     }
-    
 }
