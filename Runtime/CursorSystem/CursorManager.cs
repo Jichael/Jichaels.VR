@@ -20,6 +20,7 @@ namespace Jichaels.VRSDK
         public CursorHintLevel hintLevel;
 
         [SerializeField] private CursorInfo defaultCursorInfo;        
+        [SerializeField] private CursorInfo fixedCursorInfo;        
 
         private CursorBase _currentCursor;
 
@@ -74,7 +75,7 @@ namespace Jichaels.VRSDK
         
         public void ResetDefaultCursor()
         {
-            SetCursor(defaultCursorInfo);
+            SetCursor(IsLocked ? fixedCursorInfo : defaultCursorInfo);
         }
 
         public void SetLockState(bool isLocked)
@@ -109,6 +110,9 @@ namespace Jichaels.VRSDK
                     return handCursor;
                 case CursorType.Information:
                     return informationCursor;
+                case CursorType.Fixed:
+                    return fixedCursor;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(cursorType), cursorType, null);
             }
@@ -121,7 +125,8 @@ namespace Jichaels.VRSDK
         Default,
         Zoom,
         Hand,
-        Information // TODO : more cursor ?
+        Information, // TODO : more cursor ?
+        Fixed
     }
 
     public enum CursorHintLevel
