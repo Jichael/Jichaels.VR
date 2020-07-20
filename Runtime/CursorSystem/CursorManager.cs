@@ -85,10 +85,14 @@ namespace Jichaels.VRSDK
             IsLocked = isLocked;
             Cursor.lockState = IsLocked ? CursorLockMode.Locked : CursorLockMode.None; // TODO : in the option menu, chose between confined and none
 
+            _currentCursor.transform.position = Vector3.zero;
+            
             if (IsLocked)
             {
                 _currentCursor.HideCursor();
+                _currentCursor.transform.localPosition = Vector3.zero;
                 _currentCursor = fixedCursor;
+                _currentCursor.transform.localPosition = Vector3.zero;
                 _currentCursor.ShowCursor();
             }
         }
