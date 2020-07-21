@@ -24,6 +24,8 @@ namespace Jichaels.VRSDK
 
         private CursorBase _currentCursor;
 
+        private Vector3 _cursorPosition;
+
         private void Awake()
         {
             Instance = this;
@@ -41,8 +43,9 @@ namespace Jichaels.VRSDK
 
         public void SetCursorPosition(Vector3 position)
         {
+            _cursorPosition = position;
             if (IsLocked) return;
-            _currentCursor.transform.position = position;
+            _currentCursor.transform.position = _cursorPosition;
         }
 
         public void SetClickState(bool clickState)
@@ -71,6 +74,7 @@ namespace Jichaels.VRSDK
             }
             
             _currentCursor.ShowCursor();
+            _currentCursor.transform.position = _cursorPosition;
         }
         
         public void ResetDefaultCursor()
@@ -84,16 +88,13 @@ namespace Jichaels.VRSDK
             
             IsLocked = isLocked;
             Cursor.lockState = IsLocked ? CursorLockMode.Locked : CursorLockMode.None; // TODO : in the option menu, chose between confined and none
-
-            _currentCursor.transform.position = Vector3.zero;
             
             if (IsLocked)
             {
                 _currentCursor.HideCursor();
-                _currentCursor.transform.localPosition = Vector3.zero;
                 _currentCursor = fixedCursor;
-                _currentCursor.transform.localPosition = Vector3.zero;
                 _currentCursor.ShowCursor();
+                _currentCursor.transform.localPosition = Vector3.zero;
             }
         }
 
