@@ -60,6 +60,7 @@ namespace Jichaels.VRSDK
         
         public bool LockMovement { get; set; }
         public bool LockRotation { get; set; }
+        public bool LockInteractions { get; set; }
 
         public event Action<bool> OnToggleVR;
 
@@ -536,13 +537,13 @@ namespace Jichaels.VRSDK
             if (!ctx.performed) return;
             bool clickState = Mathf.Approximately(ctx.ReadValue<float>(), 1);
             CursorManager.Instance.SetClickState(clickState);
-            if(clickState) MouseController.PrimaryAction();
+            if(clickState && !LockInteractions) MouseController.PrimaryAction();
         }
 
         public void OnActionSecondary(InputAction.CallbackContext ctx)
         {
             if (!ctx.performed) return;
-            if(Mathf.Approximately(ctx.ReadValue<float>(), 1)) MouseController.SecondaryAction();
+            if(!LockInteractions && Mathf.Approximately(ctx.ReadValue<float>(), 1)) MouseController.SecondaryAction();
         }
 
         #endregion
