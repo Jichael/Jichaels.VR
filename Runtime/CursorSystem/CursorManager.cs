@@ -43,8 +43,8 @@ namespace Jichaels.VRSDK
 
         public void SetCursorPosition(Vector3 position)
         {
-            _cursorPosition = position;
             if (IsLocked) return;
+            _cursorPosition = position;
             _currentCursor.transform.position = _cursorPosition;
         }
 
@@ -94,6 +94,7 @@ namespace Jichaels.VRSDK
                 _currentCursor.HideCursor();
                 _currentCursor = fixedCursor;
                 _currentCursor.ShowCursor();
+                _cursorPosition = new Vector3(Screen.width / 2, Screen.height / 2, 0);
                 _currentCursor.transform.localPosition = Vector3.zero;
             }
         }
